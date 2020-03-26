@@ -1,0 +1,23 @@
+
+import networkx as nx
+import networkx.algorithms as alg
+g=nx.Graph()
+g.add_node(2)
+g.add_node(4)
+g.add_node(1)
+g.add_node(9)
+g.add_node(0)
+g.add_node(5)
+print(nx.density(g))
+g.add_edge(1,0)
+g.add_edge(1,9)
+g.add_edge(4,0)
+g.add_edge(9,2)
+g.add_edge(0,9)
+g.add_edge(4,3)
+g.add_edge(5,0)
+print(g.nodes())
+print(g.nodes(data=True))
+print(alg.centrality.degree_centrality(g))
+print(alg.assortativity.average_neighbor_degree(g))
+nx.draw_networkx(g)
